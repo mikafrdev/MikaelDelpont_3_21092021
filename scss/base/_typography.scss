@@ -3,7 +3,7 @@ body {
     font-size: 1rem;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, p {
     font-family: 'Shrikhand', sans-serif;
     margin: 0;
     padding: 0;
@@ -16,23 +16,19 @@ h1 {
 
 h2 {
     font-size: 1.2em;
+    margin-top: 20px;
+    line-height: 60px;
 }
 
 h3 {
     font-size: 1em;
+    padding-bottom: 7px;
 }
 
 h4 {
     font-size: 0.9em;
 }
 
-textarea {
-    
-}
-
-button {
-    /*font-family: 'Roboto', sans-serif;*/
-    font-weight: 900;
-    font-style: italic;
-    font-size: 2.75rem;
+footer ul li a {
+    font-size: 0.9em;
 }

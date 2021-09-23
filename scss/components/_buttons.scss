@@ -1,3 +1,52 @@
-.btn {
-    @include btn
+.btncta {
+    width: 220px;
+    margin-top: 1rem;
+    padding: $btn-padding;
+    border-radius: $border-radius;
+    color: $btn-colour;
+    background-image: linear-gradient(to bottom right, $bg-secondary, $bg-primary);
+    @include shadow;
+    cursor: pointer;
+    &:hover{
+        background: $colour-primary;
+        color: $colour-accent;
+    }
+}
+
+.cntsearch {
+    padding: 0 20px;
+}
+
+.search {
+    &__formbtn {
+        position: relative;
+        @include flexbox(row, center, center, "", "");
+        margin: 0 0 20px 12px;
+        padding: 25px;
+        border-radius: 20px;
+        color: $colour-primary;
+        @include shadow;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        &::before {
+            position: absolute;
+            left: -15px;
+            background-color: $bg-primary;
+            color: $colour-secondary;
+            border-radius: 12px;
+            padding: 5px 10px;
+            font-size: 0.8em;
+        }
+        & i {
+            margin-right: 23px;
+            font-size: larger;
+            color: $picto-color;
+        }
+    }
+    @for $i from 1 through 3 {
+        &__num#{$i}::before {
+            content: '#{$i}';
+        }
+    }
 }

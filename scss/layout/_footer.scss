@@ -1,0 +1,20 @@
+footer {
+    @include flexbox(column, "", "", "", "");
+    padding: 0 0 30px 26px;
+    background-color: $bg-footer;
+    & * {
+        color: $colour-secondary;
+    }
+    & img {
+        width: 100px;
+        margin: 26px 0;
+    }
+    & ul li {
+        line-height: 23px;
+        & i {
+            width: 20px;
+            margin-right: 12px;
+            font-size: smaller;
+        }
+    }
+}

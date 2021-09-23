@@ -6,41 +6,33 @@
     border: .1rem solid $colour;
 }
 
-@mixin img-ratio {
-    width: 100%;
-        display: block;
-        overflow: hidden;
-        padding-top: 56.25%;
-        position: relative;
-        & img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%, -50%);
-        }
-}
-
-@mixin btn {
-    width: 220px;
-    padding: $btn-padding;
-    border-radius: $btn-radius;
-    color: $btn-colour;
-    background-image: linear-gradient(to bottom right, $bg-secondary, $bg-primary);
-    cursor: pointer;
-    &:hover{
-        background: $colour-primary;
-        color: $colour-accent;
-    }
-    &--full-width {
-        width: 220px;
-        margin: 0 auto;
-    }
-}
-
-@mixin flexbox($direction) {
+@mixin flexbox($flexdirection, $flexwrap, $aligncontent, $justifycontent, $alignitems) {
     display: flex;
-    flex-direction: $direction;
-    align-items: center;
-    justify-content: center;
+    @if ($flexdirection != "") {flex-direction: $flexdirection;}
+    @if ($flexwrap != "") {flex-wrap: $flexwrap;}
+    @if ($aligncontent != "") {align-content: $aligncontent;}
+    @if ($justifycontent != "") {justify-content: $justifycontent;}
+    @if ($alignitems != "") {align-items: $alignitems;}
 }
+
+@mixin shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@mixin border-all-radius {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+}
+
+@mixin border-top-radius {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+}
+
+@mixin border-bottom-radius {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+}
+
