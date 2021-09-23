@@ -22,17 +22,25 @@
 }
 
 @mixin btn {
-    padding: $grid-gutter;
-    @include border;
-    color: $colour-primary;
-    background: $colour-secondary;
+    width: 220px;
+    padding: $btn-padding;
+    border-radius: $btn-radius;
+    color: $btn-colour;
+    background-image: linear-gradient(to bottom right, $bg-secondary, $bg-primary);
     cursor: pointer;
     &:hover{
         background: $colour-primary;
         color: $colour-accent;
     }
     &--full-width {
-        width: 100%;
+        width: 220px;
         margin: 0 auto;
     }
+}
+
+@mixin flexbox($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
 }

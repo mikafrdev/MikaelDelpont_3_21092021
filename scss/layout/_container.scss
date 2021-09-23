@@ -1,6 +1,34 @@
-.container {
-    margin: $layout-margin;
-    padding: $grid-gutter $grid-gutter 0 $grid-gutter;
-    @include border($colour-accent);
+.main {
+    /*width: 335px;
+    margin: 0 $layout-margin;*/
 }
 
+.cntsearch {
+    padding: 0 20px;
+    & .formbtn {
+        position: relative;
+        @include flexbox(row);
+        margin: 0 0 20px 12px;
+        padding: 25px;
+        border-radius: 20px;
+        color: $colour-primary;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        &::before {
+            position: absolute;
+            left: -15px;
+            content: "1";
+            background-color: $bg-primary;
+            color: $colour-secondary;
+            border-radius: 12px;
+            padding: 5px 10px;
+            font-size: 0.8em;
+        }
+        & i {
+            margin-right: 23px;
+            font-size: larger;
+        }
+    }
+}

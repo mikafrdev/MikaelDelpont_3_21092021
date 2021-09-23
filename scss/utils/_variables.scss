@@ -1,9 +1,23 @@
-$colour-primary: #15DEA5;
-$colour-secondary: #001534;
-$colour-accent: #D6FFF5;
+$colour-primary: #000;
+$colour-secondary: #fff;
+$colour-tertiary: #000;
+$bg-primary: #9356DC;
+$bg-secondary: #FF79DA;
+$bg-tertiary: #99E2D0;
 $colour-white: #fff;
-$colour-invalid: #DB464B;
+$bg-colour: #fff;
+
+$layout-margin: 2rem;
 
 $heading-shadow-size: .55rem;
-$layout-margin: 6rem;
+$layout-margin: 1rem;
 $grid-gutter: $layout-margin * .25;
+
+$colour-accent: #9356DC;
+
+$btn-colour: #fff;
+$btn-padding: 10px;
+$btn-radius: 18px;
+
+/*$colour-invalid: #DB464B;
+$heading-shadow-size: .55rem;*/
