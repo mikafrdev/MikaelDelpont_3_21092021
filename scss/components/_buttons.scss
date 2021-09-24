@@ -1,27 +1,29 @@
 .btncta {
-    width: 220px;
     margin: 2rem 0 1rem 0;
     text-align: center;
-    padding: $btn-padding;
-    border-radius: $border-radius;
+    padding: 15px 20px;
+    border-radius: 30px;
     color: $btn-colour;
     background-image: linear-gradient(to bottom right, $bg-secondary, $bg-primary);
     @include shadow;
     cursor: pointer;
     &:hover{
         background: $colour-primary;
-        color: $colour-accent;
     }
 }
 
 .search {
+    @include flexbox(column, "", "", "", center);
+    @include breakpoints {
+        @include flexbox(row, wrap, "", space-between, "");
+    }
     & div {
         position: relative;
         @include flexbox(row, "", "", "", center);
+        width: 275px;
         margin: 0 0 20px 12px;
         padding: 25px;
         border-radius: 20px;
-        color: $colour-primary;
         font-weight: bold;
         cursor: pointer;
         background-color: $bg-colour-resto;
@@ -41,7 +43,7 @@
             color: $picto-color;
         }
     }
-    @for $i from 1 through 3 {
+    @for $i from 1 through $btnsearchnumber {
         &--num#{$i}::before {
             content: '#{$i}';
         }

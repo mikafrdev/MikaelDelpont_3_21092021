@@ -1,0 +1,48 @@
+.resto {
+    @include breakpoints {
+        width: 49%;
+        height: fit-content;
+    }
+    position: relative;
+    margin-bottom: 18px;
+    @include border-all-radius;
+    @include shadow;
+    & a {
+        @include flexbox(column, "", "", "", "");
+        cursor: pointer;
+    }
+    &__new {
+        position: absolute;
+        top: 13px;
+        right: 13px;
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        border-radius: 2px;
+        line-height: 30px;
+        font-weight: bold;
+        color: darken($bg-tertiary, 30%);
+        background-color: $bg-tertiary;
+    }
+    &__photo {
+        width: 100%;
+        min-height: 174px;
+        background-size: cover;
+        @include border-top-radius;
+        @each $key, $value in $lienphotos {
+            &--#{$key} {
+                background-image: $value;
+            }
+        }
+    }
+    &__infos {
+        @include flexbox("", "", "", space-between, "");
+        padding: 16px 20px 20px 14px;
+        background-color: $bg-colour;
+        @include border-bottom-radius;
+        & i {
+            font-weight: 100;
+            font-size: 1.5em;
+        }
+    }
+}

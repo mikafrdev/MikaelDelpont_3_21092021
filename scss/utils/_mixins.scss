@@ -1,7 +1,3 @@
-@mixin heading-shadow($colour:lightness-shift($colour-primary), $offset: $heading-shadow-size){
-    text-shadow: $offset $offset $colour;
-}
-
 @mixin border($colour:$colour-primary) {
     border: .1rem solid $colour;
 }
@@ -36,3 +32,8 @@
     border-bottom-right-radius: $border-radius;
 }
 
+@mixin breakpoints {
+    @media screen and (min-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+}

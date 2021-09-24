@@ -1,21 +1,17 @@
 $colour-primary: #000;
 $colour-secondary: #fff;
 $colour-tertiary: #000;
+$colour-accent: #9356DC;
+$colour-white: #fff;
 $bg-primary: #9356DC;
 $bg-secondary: #FF79DA;
 $bg-tertiary: #99E2D0;
-$colour-white: #fff;
 $bg-colour: #fff;
 $bg-colour-resto: #f6f6f6;
 $bg-footer: #353535;
 
-
-
-$heading-shadow-size: .55rem;
 $layout-margin: 1rem;
-$grid-gutter: $layout-margin * .25;
-
-$colour-accent: #9356DC;
+$border-radius: 20px;
 
 $btn-colour: #fff;
 $btn-padding: 15px;
@@ -23,7 +19,16 @@ $btn-radius: 18px;
 
 $picto-color: grey;
 
-$border-radius: 20px;
+//Nombre de bouton de recherche
+$btnsearchnumber: 3;
 
-/*$colour-invalid: #DB464B;
-$heading-shadow-size: .55rem;*/
+$breakpoints: (
+    mobile: 768px
+);
+
+$lienphotos: (
+    photo1: url(../images/jay-wennington-N_Y88TWmGwA-unsplash.jpg),
+    photo2: url(../images/stil-u2Lp8tXIcjw-unsplash.jpg),
+    photo3: url(../images/toa-heftiba-DQKerTsQwi0-unsplash.jpg),
+    photo4: url(../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg)
+);
