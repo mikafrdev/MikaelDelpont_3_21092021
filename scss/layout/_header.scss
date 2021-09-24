@@ -1,18 +1,11 @@
-.cntlogolocation, .cnttitlebtn {
-    & * {
-        text-align: center;
-    }
-}
-
 .logo {
     margin: 22px 0 12px 0; 
 }
 
 .location {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexbox(row, "", "", center, center);
+    width: 100%;
     height: 50px;
     background-color: #eaeaea;
     box-shadow: inset 0px 5px 9px -5px rgb(0 0 0 / 40%);
@@ -21,13 +14,13 @@
     }
 }
 
-.cnttitlebtn {
-    @include flexbox(column, "", "", center, center);
-    padding-bottom: 2.5rem;
-    background-image: linear-gradient(#fff, #f6f6f6);
-    //box-shadow: inset 0px 5px 9px -5px rgb(0 0 0 / 40%);
+.headertxt {
+    text-align: center;
     & h1 {
-        margin: 2rem 0 1rem 0;
-        padding: 0 4rem;
+        margin: 2rem 3.3rem 0 3.3rem;
+        line-height: 1.5rem;
+    }
+    & p {
+        padding: 0.5rem 1rem 0.1rem 1rem;
     }
 }

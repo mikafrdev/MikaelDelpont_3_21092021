@@ -2,6 +2,20 @@
     
 }
 
+.container {
+    @include flexbox(column, "", "", "", "");
+    padding-bottom: 2rem;
+    &--padding {
+        padding: 0 $layout-margin 2rem $layout-margin;
+    }
+    &--gradient {
+        background-image: linear-gradient(#fff, #f6f6f6);
+    }
+    &--aligncenter {
+        align-items: center;
+    }
+}
+
 nav {
     @include flexbox(column, "", "", "", "");
     padding: 0 $layout-margin 45px $layout-margin;

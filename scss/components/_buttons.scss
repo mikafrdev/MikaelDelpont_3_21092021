@@ -1,6 +1,7 @@
 .btncta {
     width: 220px;
-    margin-top: 1rem;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
     padding: $btn-padding;
     border-radius: $border-radius;
     color: $btn-colour;
@@ -13,22 +14,18 @@
     }
 }
 
-.cntsearch {
-    padding: 0 20px;
-}
-
 .search {
-    &__formbtn {
+    & div {
         position: relative;
-        @include flexbox(row, center, center, "", "");
+        @include flexbox(row, "", "", "", center);
         margin: 0 0 20px 12px;
         padding: 25px;
         border-radius: 20px;
         color: $colour-primary;
-        @include shadow;
         font-weight: bold;
         cursor: pointer;
-        text-align: center;
+        background-color: $bg-colour-resto;
+        @include shadow;
         &::before {
             position: absolute;
             left: -15px;
@@ -45,7 +42,7 @@
         }
     }
     @for $i from 1 through 3 {
-        &__num#{$i}::before {
+        &--num#{$i}::before {
             content: '#{$i}';
         }
     }
