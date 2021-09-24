@@ -14,13 +14,16 @@
 
 .search {
     @include flexbox(column, "", "", "", center);
-    @include breakpoints {
+    @include breakpoints (md) {
         @include flexbox(row, wrap, "", space-between, "");
     }
     & div {
         position: relative;
         @include flexbox(row, "", "", "", center);
         width: 275px;
+        @include breakpoints(lg) {
+            width: 250px;
+        }
         margin: 0 0 20px 12px;
         padding: 25px;
         border-radius: 20px;

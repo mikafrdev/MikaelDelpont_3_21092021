@@ -32,8 +32,8 @@
     border-bottom-right-radius: $border-radius;
 }
 
-@mixin breakpoints {
-    @media screen and (min-width: map-get($breakpoints, mobile)){
+@mixin breakpoints($screen) {
+    @media screen and (min-width: map-get($breakpoints, $screen)){
         @content;
     }
 }

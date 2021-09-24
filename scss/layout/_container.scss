@@ -1,5 +1,6 @@
 .main {
-    
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .container {
@@ -18,9 +19,12 @@
         background-color: $bg-colour-resto;
     }
     &--flexrow {
-        @include breakpoints {
+        @include breakpoints(md) {
             @include flexbox(row, wrap, "", space-between, "");
         }
     }
-
+    &--footer {
+        padding-bottom: 1.5rem;
+        background-color: $bg-footer;
+    }
 }

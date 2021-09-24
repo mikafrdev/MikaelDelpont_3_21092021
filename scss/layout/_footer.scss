@@ -1,7 +1,4 @@
 footer {
-    @include flexbox(column, "", "", "", "");
-    padding: 0 0 30px 26px;
-    background-color: $bg-footer;
     & * {
         color: $colour-secondary;
     }

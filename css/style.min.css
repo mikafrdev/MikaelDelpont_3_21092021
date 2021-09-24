@@ -98,6 +98,11 @@ footer ul li a {
   background-color: #f6f6f6;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+@media screen and (min-width: 992px) {
+  .search div {
+    width: 250px;
+  }
+}
 .search div::before {
   position: absolute;
   left: -15px;
@@ -177,6 +182,11 @@ footer ul li a {
   color: #fff;
 }
 
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -202,13 +212,11 @@ footer ul li a {
     justify-content: space-between;
   }
 }
-
-footer {
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 30px 26px;
+.container--footer {
+  padding-bottom: 1.5rem;
   background-color: #353535;
 }
+
 footer * {
   color: #fff;
 }
@@ -264,6 +272,16 @@ footer ul li i {
   background-size: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+}
+@media screen and (min-width: 992px) {
+  .resto__photo {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .resto__photo {
+    height: 380px;
+  }
 }
 .resto__photo--photo1 {
   background-image: url(../images/jay-wennington-N_Y88TWmGwA-unsplash.jpg);

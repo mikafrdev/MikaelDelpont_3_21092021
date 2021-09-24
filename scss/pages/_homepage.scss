@@ -1,5 +1,5 @@
 .resto {
-    @include breakpoints {
+    @include breakpoints(md) {
         width: 49%;
         height: fit-content;
     }
@@ -27,6 +27,12 @@
     &__photo {
         width: 100%;
         min-height: 174px;
+        @include breakpoints(lg) {
+            height: 300px;
+        }
+        @include breakpoints(xl) {
+            height: 380px;
+        }
         background-size: cover;
         @include border-top-radius;
         @each $key, $value in $lienphotos {
