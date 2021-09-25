@@ -12,25 +12,41 @@
     }
 }
 
-.search {
+.shape {
     @include flexbox(column, "", "", "", center);
     @include breakpoints (md) {
         @include flexbox(row, wrap, "", space-between, "");
     }
-    & div {
+    &__hp {
+        margin: 0 25px 0 40px;
+    }
+    & div, li {
         position: relative;
         @include flexbox(row, "", "", "", center);
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 25px;
+        border: 0;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        @include shadow;
+        & i {
+            margin-right: 23px;
+            font-size: larger;
+            color: $picto-color;
+        }
+    }
+    &--ajustwidth {
         width: 275px;
         @include breakpoints(lg) {
             width: 250px;
         }
-        margin: 0 0 20px 12px;
-        padding: 25px;
-        border-radius: 20px;
-        font-weight: bold;
-        cursor: pointer;
+    }
+    &--bg {
         background-color: $bg-colour-resto;
-        @include shadow;
+    }
+    &__num {
         &::before {
             position: absolute;
             left: -15px;
@@ -40,15 +56,10 @@
             padding: 5px 10px;
             font-size: 0.8em;
         }
-        & i {
-            margin-right: 23px;
-            font-size: larger;
-            color: $picto-color;
+        @for $i from 1 through $btnsearchnumber {
+            &--#{$i}::before {
+                content: '#{$i}';
+            }
         }
-    }
-    @for $i from 1 through $btnsearchnumber {
-        &--num#{$i}::before {
-            content: '#{$i}';
-        }
-    }
+    }   
 }

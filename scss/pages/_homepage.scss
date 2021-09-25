@@ -5,7 +5,7 @@
     }
     position: relative;
     margin-bottom: 18px;
-    @include border-all-radius;
+    @include border-all-radius($border-radius);
     @include shadow;
     & a {
         @include flexbox(column, "", "", "", "");
@@ -34,7 +34,7 @@
             height: 380px;
         }
         background-size: cover;
-        @include border-top-radius;
+        @include border-top-radius($border-radius);
         @each $key, $value in $lienphotos {
             &--#{$key} {
                 background-image: $value;
@@ -45,7 +45,7 @@
         @include flexbox("", "", "", space-between, "");
         padding: 16px 20px 20px 14px;
         background-color: $bg-colour;
-        @include border-bottom-radius;
+        @include border-bottom-radius($border-radius);
         & i {
             font-weight: 100;
             font-size: 1.5em;

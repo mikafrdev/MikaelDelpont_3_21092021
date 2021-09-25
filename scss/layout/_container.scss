@@ -15,8 +15,14 @@
     &--aligncenter {
         align-items: center;
     }
-    &--bg {
+    &--bg1 {
         background-color: $bg-colour-resto;
+    }
+    &--bg2 {
+        background-color: $bg-colour;
+    }
+    &--menu {
+        padding: 0 12px 0 14px;
     }
     &--flexrow {
         @include breakpoints(md) {
