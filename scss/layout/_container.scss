@@ -4,13 +4,15 @@
 }
 
 .container {
-    @include flexbox(column, "", "", "", "");
     padding-bottom: 2rem;
     &--padding {
         padding: 0 $layout-margin 2rem $layout-margin;
     }
     &--gradient {
         background-image: linear-gradient(#fff, #f6f6f6);
+    }
+    &--rowcenter {
+        @include flexbox("", "", "", center, "");
     }
     &--aligncenter {
         align-items: center;
@@ -22,15 +24,83 @@
         background-color: $bg-colour;
     }
     &--menu {
+        margin-top: 220px;
         padding: 0 12px 0 14px;
+        @include border-top-radius(50px);
     }
     &--flexrow {
         @include breakpoints(md) {
             @include flexbox(row, wrap, "", space-between, "");
         }
     }
+    &--flexrowmenu {
+        @include flexbox("", "", "", space-between, center);
+        padding-top: 40px;
+        & i {
+            margin-right: 38px;
+        }
+    }
     &--footer {
         padding-bottom: 1.5rem;
         background-color: $bg-footer;
     }
+}
+
+.shape {
+    @include flexbox(column, "", "", "", center);
+    @include breakpoints (md) {
+        @include flexbox(row, wrap, "", space-between, "");
+    }
+    & li {
+        position: relative;
+        margin-bottom: 20px;
+        padding: 25px;
+        border: 0;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        @include shadow;
+        & a {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+    &--hp li {
+        @include flexbox(row, "", "", "", center);
+        width: 275px;
+        @include breakpoints(lg) {
+            width: 250px;
+        }
+    }
+    &--menu ul {
+        width: 100%;
+    }
+    &--menu li {
+        @include flexbox(row, wrap, "", space-between, "");
+    }
+    &--menu p {
+        
+    }
+    &--bg {
+        background-color: $bg-colour-resto;
+    }
+    &__num {
+        &::before {
+            position: absolute;
+            left: -15px;
+            background-color: $bg-primary;
+            color: $colour-secondary;
+            border-radius: 12px;
+            padding: 5px 10px;
+            font-size: 0.8em;
+        }
+        @for $i from 1 through $btnsearchnumber {
+            &--#{$i}::before {
+                content: '#{$i}';
+            }
+        }
+    }   
 }

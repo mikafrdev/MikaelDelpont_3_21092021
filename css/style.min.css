@@ -42,12 +42,22 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 1.4em;
 }
+h1.menu {
+  font-size: 2em;
+  font-weight: 800;
+  font-style: italic;
+}
 
 h2 {
   font-size: 1.2em;
   margin-top: 20px;
-  line-height: 60px;
   width: 100%;
+}
+h2.hp {
+  line-height: 60px;
+}
+h2.menu {
+  line-height: 35px;
 }
 
 h3 {
@@ -68,6 +78,7 @@ footer ul li a {
   margin: 2rem 0 1rem 0;
   text-align: center;
   padding: 15px 20px;
+  border: 0;
   border-radius: 30px;
   color: #fff;
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
@@ -78,69 +89,24 @@ footer ul li a {
   background: #000;
 }
 
-.shape {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.picto_heart {
+  font-weight: 100;
+  font-size: 1.5em;
 }
-@media screen and (min-width: 768px) {
-  .shape {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-}
-.shape__hp {
-  margin: 0 25px 0 40px;
-}
-.shape div, .shape li {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 25px;
-  border: 0;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.shape div i, .shape li i {
+
+.picto_mobile {
   margin-right: 23px;
   font-size: larger;
   color: grey;
 }
-.shape--ajustwidth {
-  width: 275px;
-}
-@media screen and (min-width: 992px) {
-  .shape--ajustwidth {
-    width: 250px;
-  }
-}
-.shape--bg {
-  background-color: #f6f6f6;
-}
-.shape__num::before {
+
+.picto_arrow_back {
+  display: block;
   position: absolute;
-  left: -15px;
-  background-color: #9356DC;
-  color: #fff;
-  border-radius: 12px;
-  padding: 5px 10px;
-  font-size: 0.8em;
-}
-.shape__num--1::before {
-  content: "1";
-}
-.shape__num--2::before {
-  content: "2";
-}
-.shape__num--3::before {
-  content: "3";
+  top: 1px;
+  left: 23px;
+  font-size: larger;
+  color: #353535;
 }
 
 .logo {
@@ -213,8 +179,6 @@ footer ul li a {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
   padding-bottom: 2rem;
 }
 .container--padding {
@@ -222,6 +186,10 @@ footer ul li a {
 }
 .container--gradient {
   background-image: linear-gradient(#fff, #f6f6f6);
+}
+.container--rowcenter {
+  display: flex;
+  justify-content: center;
 }
 .container--aligncenter {
   align-items: center;
@@ -233,7 +201,10 @@ footer ul li a {
   background-color: #fff;
 }
 .container--menu {
+  margin-top: 220px;
   padding: 0 12px 0 14px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 @media screen and (min-width: 768px) {
   .container--flexrow {
@@ -243,9 +214,90 @@ footer ul li a {
     justify-content: space-between;
   }
 }
+.container--flexrowmenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+}
+.container--flexrowmenu i {
+  margin-right: 38px;
+}
 .container--footer {
   padding-bottom: 1.5rem;
   background-color: #353535;
+}
+
+.shape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .shape {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.shape li {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 25px;
+  border: 0;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.shape li a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.shape--hp li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 275px;
+}
+@media screen and (min-width: 992px) {
+  .shape--hp li {
+    width: 250px;
+  }
+}
+.shape--menu ul {
+  width: 100%;
+}
+.shape--menu li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.shape--bg {
+  background-color: #f6f6f6;
+}
+.shape__num::before {
+  position: absolute;
+  left: -15px;
+  background-color: #9356DC;
+  color: #fff;
+  border-radius: 12px;
+  padding: 5px 10px;
+  font-size: 0.8em;
+}
+.shape__num--1::before {
+  content: "1";
+}
+.shape__num--2::before {
+  content: "2";
+}
+.shape__num--3::before {
+  content: "3";
 }
 
 footer * {
@@ -326,6 +378,9 @@ footer ul li i {
 .resto__photo--photo4 {
   background-image: url(../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
+.resto__photo--menu {
+  width: 250px;
+}
 .resto__infos {
   display: flex;
   justify-content: space-between;
@@ -334,37 +389,19 @@ footer ul li i {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-.resto__infos i {
-  font-weight: 100;
-  font-size: 1.5em;
+
+a.linkall {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
-.logo__arrow_back {
-  display: block;
-  position: absolute;
-  top: 1px;
-  left: 23px;
-  font-size: larger;
-  color: #353535;
-}
-
-.resto__photo--photo3 {
-  height: 250px;
-  background-size: cover;
-  background-position: center;
-}
-
-h1 {
-  padding: 0 18px;
-  margin-top: 200px;
-  padding-top: 2rem;
-  line-height: 70px;
-  font-size: 2em;
-  font-weight: 800;
-  font-style: italic;
-  background-color: #fff;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+.title-underline {
+  width: 40px;
+  margin-bottom: 14px;
+  border-bottom: 3px solid #99e2d0;
 }
 
 .plat {
@@ -375,6 +412,8 @@ h1 {
 }
 
 .bgphoto {
+  display: flex;
+  flex-direction: column;
   background-size: contain;
   background-repeat: no-repeat;
 }

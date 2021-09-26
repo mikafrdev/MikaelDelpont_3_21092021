@@ -40,15 +40,14 @@
                 background-image: $value;
             }
         }
+        &--menu {
+            width: 250px;
+        }
     }
     &__infos {
         @include flexbox("", "", "", space-between, "");
         padding: 16px 20px 20px 14px;
         background-color: $bg-colour;
         @include border-bottom-radius($border-radius);
-        & i {
-            font-weight: 100;
-            font-size: 1.5em;
-        }
     }
 }

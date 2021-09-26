@@ -30,13 +30,23 @@ h1, h2, h3, h4 {
 
 h1 {
     font-size: 1.4em;
+    &.menu {
+        font-size: 2em;
+        font-weight: 800;
+        font-style: italic;
+    }
 }
 
 h2 {
     font-size: 1.2em;
     margin-top: 20px;
-    line-height: 60px;
     width: 100%;
+    &.hp {
+        line-height: 60px;
+    }
+    &.menu {
+        line-height: 35px;
+    }
 }
 
 h3 {

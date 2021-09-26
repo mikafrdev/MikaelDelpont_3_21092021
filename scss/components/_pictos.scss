@@ -1,0 +1,19 @@
+.picto_heart {
+    font-weight: 100;
+    font-size: 1.5em;
+}
+
+.picto_mobile {
+    margin-right: 23px;
+    font-size: larger;
+    color: grey;
+}
+
+.picto_arrow_back {
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 23px;
+    font-size: larger;
+    color: $bg-footer;
+}
