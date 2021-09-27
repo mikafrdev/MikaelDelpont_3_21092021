@@ -24,7 +24,7 @@
         background-color: $bg-colour;
     }
     &--menu {
-        margin-top: 220px;
+        margin-top: 194px;
         padding: 0 12px 0 14px;
         @include border-top-radius(50px);
     }
@@ -70,9 +70,15 @@
     }
     &--hp li {
         @include flexbox(row, "", "", "", center);
-        width: 275px;
+        min-width: 250px;
+        
         @include breakpoints(lg) {
             width: 250px;
+        }
+        & i {
+            margin: 0 15px 0 10px;
+            font-size: larger;
+            color: grey;
         }
     }
     &--menu ul {
@@ -80,9 +86,14 @@
     }
     &--menu li {
         @include flexbox(row, wrap, "", space-between, "");
+        background-color: $bg-colour;
+        padding: 18px 23px 15px 16px;
     }
-    &--menu p {
-        
+    &--menu ul li h3 {
+        font-size: 1.3em;
+    }
+    &--menu ul li span {
+        font-size: 1em;
     }
     &--bg {
         background-color: $bg-colour-resto;

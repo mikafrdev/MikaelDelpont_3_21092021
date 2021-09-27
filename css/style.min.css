@@ -23,51 +23,61 @@ ul {
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Shrikhand";
   src: url("../../fonts/Shrikhand-Regular.ttf") format("truetype");
+}
+@font-face {
   font-family: "Roboto";
-  src: url("../../fonts/Roboto-Black.ttf") format("truetype"), url("../../fonts/Roboto-BlackItalic.ttf") format("truetype"), url("../../fonts/Roboto-BoldItalic.ttf") format("truetype"), url("../../fonts/Roboto-Italic.ttf") format("truetype"), url("../../fonts/Roboto-Light.ttf") format("truetype"), url("../../fonts/Roboto-LightItalic.ttf") format("truetype"), url("../../fonts/Roboto-Medium.ttf") format("truetype"), url("../../fonts/Roboto-MediumItalic.ttf") format("truetype"), url("../../fonts/Roboto-Regular.ttf") format("truetype"), url("../../fonts/Roboto-Thin.ttf") format("truetype"), url("../../fonts/Roboto-ThinItalic.ttf") format("truetype"), url("../../fonts/Shrikhand-Regular.ttf") format("truetype");
+  src: url("../../fonts/Roboto-Light.ttf") format("truetype"), url("../../fonts/Roboto-Black.ttf") format("truetype"), url("../../fonts/Roboto-BlackItalic.ttf") format("truetype"), url("../../fonts/Roboto-BoldItalic.ttf") format("truetype"), url("../../fonts/Roboto-Italic.ttf") format("truetype"), url("../../fonts/Roboto-LightItalic.ttf") format("truetype"), url("../../fonts/Roboto-Medium.ttf") format("truetype"), url("../../fonts/Roboto-MediumItalic.ttf") format("truetype"), url("../../fonts/Roboto-Regular.ttf") format("truetype"), url("../../fonts/Roboto-Thin.ttf") format("truetype"), url("../../fonts/Roboto-ThinItalic.ttf") format("truetype"), url("../../fonts/Shrikhand-Regular.ttf") format("truetype");
 }
-body, p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-}
-
-h1, h2, h3, h4 {
+h1 {
   font-family: "Shrikhand", sans-serif;
   margin: 0;
   padding: 0;
 }
 
 h1 {
-  font-size: 1.4em;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 h1.menu {
-  font-size: 2em;
+  margin-left: 8px;
+  font-size: 1.6em;
   font-weight: 800;
-  font-style: italic;
+  font-weight: normal;
+}
+
+body, h2, h3, h4, p {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-top: 20px;
   width: 100%;
 }
 h2.hp {
-  line-height: 60px;
+  padding: 60px 0 28px 0;
 }
 h2.menu {
   line-height: 35px;
+  font-size: 1.1em;
+  font-weight: normal;
 }
 
 h3 {
-  font-size: 1em;
+  font-size: 1.1em;
   padding-bottom: 7px;
   width: 100%;
 }
 
 h4 {
   font-size: 0.9em;
+}
+
+p {
+  font-weight: normal;
 }
 
 footer ul li a {
@@ -85,6 +95,10 @@ footer ul li a {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
 }
+.btncta--menu {
+  font-size: 20px;
+  padding: 20px 50px;
+}
 .btncta:hover {
   background: #000;
 }
@@ -92,12 +106,6 @@ footer ul li a {
 .picto_heart {
   font-weight: 100;
   font-size: 1.5em;
-}
-
-.picto_mobile {
-  margin-right: 23px;
-  font-size: larger;
-  color: grey;
 }
 
 .picto_arrow_back {
@@ -141,15 +149,16 @@ footer ul li a {
   text-align: center;
 }
 .headertxt h1 {
+  font-family: "Roboto";
   margin: 2rem 3.3rem 0 3.3rem;
-  line-height: 1.5rem;
+  line-height: 1.8rem;
 }
 .headertxt p {
   padding: 0.5rem 1rem 0.1rem 1rem;
 }
 
 .nav {
-  padding-right: 1rem;
+  padding-right: 20px;
   flex: 2 1 auto;
   text-align: right;
 }
@@ -182,7 +191,7 @@ footer ul li a {
   padding-bottom: 2rem;
 }
 .container--padding {
-  padding: 0 1rem 2rem 1rem;
+  padding: 0 20px 2rem 20px;
 }
 .container--gradient {
   background-image: linear-gradient(#fff, #f6f6f6);
@@ -201,7 +210,7 @@ footer ul li a {
   background-color: #fff;
 }
 .container--menu {
-  margin-top: 220px;
+  margin-top: 194px;
   padding: 0 12px 0 14px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -262,12 +271,17 @@ footer ul li a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 275px;
+  min-width: 250px;
 }
 @media screen and (min-width: 992px) {
   .shape--hp li {
     width: 250px;
   }
+}
+.shape--hp li i {
+  margin: 0 15px 0 10px;
+  font-size: larger;
+  color: grey;
 }
 .shape--menu ul {
   width: 100%;
@@ -277,6 +291,14 @@ footer ul li a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: #fff;
+  padding: 18px 23px 15px 16px;
+}
+.shape--menu ul li h3 {
+  font-size: 1.3em;
+}
+.shape--menu ul li span {
+  font-size: 1em;
 }
 .shape--bg {
   background-color: #f6f6f6;
@@ -344,6 +366,7 @@ footer ul li i {
   height: 30px;
   text-align: center;
   border-radius: 2px;
+  font-size: 0.8em;
   line-height: 30px;
   font-weight: bold;
   color: #32b091;
@@ -398,7 +421,7 @@ a.linkall {
   left: 0;
 }
 
-.title-underline {
+.underline {
   width: 40px;
   margin-bottom: 14px;
   border-bottom: 3px solid #99e2d0;

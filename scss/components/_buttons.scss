@@ -8,6 +8,10 @@
     background-image: linear-gradient(to bottom right, $bg-secondary, $bg-primary);
     @include shadow;
     cursor: pointer;
+    &--menu {
+        font-size: 20px;
+        padding: 20px 50px;
+    }
     &:hover{
         background: $colour-primary;
     }
