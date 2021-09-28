@@ -2,9 +2,8 @@ footer {
     & * {
         color: $colour-secondary;
     }
-    & img {
-        width: 100px;
-        margin: 1.5rem 0 0.7rem 0;
+    & a.logo {
+        margin-bottom: 15px;
     }
     & ul {
         & li {

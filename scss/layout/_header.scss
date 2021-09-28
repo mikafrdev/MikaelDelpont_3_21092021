@@ -1,17 +1,6 @@
-.logo {
-    position: relative;
-    @include flexbox(row, "", "", center, center);
-    width: 100%;
-    margin: 22px 0 12px 0;
-    &__arrow_back {
-        display: none;
-    }
-}
-
 .location {
     position: relative;
     @include flexbox(row, "", "", center, center);
-    width: 100%;
     height: 50px;
     background-color: #eaeaea;
     box-shadow: inset 0px 5px 9px -5px rgb(0 0 0 / 40%);
@@ -22,12 +11,11 @@
 
 .headertxt {
     text-align: center;
-    & h1 {
-        font-family: "Roboto";
-        margin: 2rem 3.3rem 0 3.3rem;
-        line-height: 1.8rem;
+    & p.primarytxt {
+        margin: 43px 65px 0;
+        
     }
-    & p {
-        padding: 0.5rem 1rem 0.1rem 1rem;
+    & p.secondarytxt {
+        margin: 15px 40px 0;
     }
 }

@@ -3,6 +3,16 @@
     margin: 0 auto;
 }
 
+.cntlogo {
+    position: relative;
+    @include flexbox(row, "", "", center, center);
+    width: 100%;
+    margin: 22px 0 12px 0;
+    &__arrow_back {
+        display: none;
+    }
+}
+
 .container {
     padding-bottom: 2rem;
     &--padding {
@@ -41,64 +51,34 @@
         }
     }
     &--footer {
+        padding-top: 2.2rem;
         padding-bottom: 1.5rem;
         background-color: $bg-footer;
     }
 }
 
-.shape {
-    @include flexbox(column, "", "", "", center);
-    @include breakpoints (md) {
-        @include flexbox(row, wrap, "", space-between, "");
+.title {
+    padding: 60px 0 28px 0; 
+}
+
+.instructions {
+    & ul {
+        @include flexbox(column, "", "", "", center);
+        @include breakpoints (md) {
+            @include flexbox(row, wrap, "", space-around, "");
+        }
     }
     & li {
-        position: relative;
-        margin-bottom: 20px;
-        padding: 25px;
-        border: 0;
-        border-radius: 20px;
-        font-weight: bold;
-        cursor: pointer;
-        @include shadow;
-        & a {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
-    }
-    &--hp li {
         @include flexbox(row, "", "", "", center);
-        min-width: 250px;
-        
-        @include breakpoints(lg) {
-            width: 250px;
-        }
+        width: 268px;
+        position: relative;
+        background-color: $bg-colour-resto;
+        @include bloc;
         & i {
             margin: 0 15px 0 10px;
             font-size: larger;
             color: grey;
         }
-    }
-    &--menu ul {
-        width: 100%;
-    }
-    &--menu li {
-        @include flexbox(row, wrap, "", space-between, "");
-        background-color: $bg-colour;
-        padding: 18px 23px 15px 16px;
-    }
-    &--menu ul li h3 {
-        font-size: 1.3em;
-    }
-    &--menu ul li span {
-        font-size: 1em;
-    }
-    &--bg {
-        background-color: $bg-colour-resto;
-    }
-    &__num {
         &::before {
             position: absolute;
             left: -15px;
@@ -109,9 +89,45 @@
             font-size: 0.8em;
         }
         @for $i from 1 through $btnsearchnumber {
-            &--#{$i}::before {
+            &.num#{$i}::before {
                 content: '#{$i}';
             }
         }
-    }   
+        @include breakpoints(lg) {
+            width: 230px;
+        }
+        @include breakpoints(xl) {
+            width: 300px;
+        }
+        @include breakpoints(xxl) {
+            width: 370px;
+        }
+    } 
+}
+
+.plat {
+    @include flexbox(column, "", "", "", center);
+    @include breakpoints (md) {
+        @include flexbox(row, wrap, "", space-around, "");
+    }
+    & div {
+        @include flexbox(row, wrap, "", space-between, "");
+        @include bloc;
+        background-color: $bg-colour;
+        padding: 18px 23px 15px 16px;
+        & a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        & h3 {
+            font-size: 1.3em;
+        }
+        & span {
+            font-size: 1em;
+            font-weight: bold;
+        }
+    }
 }
