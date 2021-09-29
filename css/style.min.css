@@ -77,8 +77,13 @@ p {
   font-weight: normal;
 }
 
-.cntlogo a.logo {
+.logo--header a {
   font-size: 1.6em;
+}
+.logo--footer a {
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: normal;
 }
 
 .primarytxt {
@@ -94,12 +99,6 @@ p {
 .title {
   font-size: 1.5em;
   font-weight: bold;
-}
-
-footer .logo {
-  color: #fff;
-  font-weight: normal;
-  font-size: 0.9em;
 }
 
 footer ul li a {
@@ -190,17 +189,25 @@ footer ul li a {
   margin: 0 auto;
 }
 
-.cntlogo {
+.logo {
   position: relative;
+  width: 100%;
+}
+.logo__arrow_back {
+  display: none;
+}
+.logo--header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
   margin: 22px 0 12px 0;
 }
-.cntlogo__arrow_back {
-  display: none;
+.logo--footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .container {
@@ -248,8 +255,22 @@ footer ul li a {
 .container--flexrowmenu i {
   margin-right: 38px;
 }
+.container--plats {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+@media screen and (min-width: 768px) {
+  .container--plats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
 .container--footer {
-  padding-top: 2.2rem;
+  padding-top: 1.8rem;
   padding-bottom: 1.5rem;
   background-color: #353535;
 }
@@ -268,7 +289,7 @@ footer ul li a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
 .instructions li {
@@ -326,19 +347,6 @@ footer ul li a {
 
 .plat {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .plat {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-}
-.plat div {
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -348,22 +356,33 @@ footer ul li a {
   border-radius: 20px;
   font-weight: bold;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width: 450px;
   background-color: #fff;
   padding: 18px 23px 15px 16px;
 }
-.plat div a {
+.plat a {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
 }
-.plat div h3 {
+.plat h3 {
   font-size: 1.3em;
 }
-.plat div span {
+.plat span {
   font-size: 1em;
   font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .plat {
+    width: 44%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .plat {
+    width: 29%;
+  }
 }
 
 footer * {
@@ -377,7 +396,7 @@ footer ul li {
 }
 footer ul li i {
   width: 20px;
-  margin-right: 12px;
+  margin-right: 8px;
   font-size: smaller;
 }
 
@@ -432,16 +451,16 @@ footer ul li i {
     height: 380px;
   }
 }
-.resto__photo--photo1 {
+.resto__photo--palette {
   background-image: url(../images/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
 }
-.resto__photo--photo2 {
+.resto__photo--note {
   background-image: url(../images/stil-u2Lp8tXIcjw-unsplash.jpg);
 }
-.resto__photo--photo3 {
+.resto__photo--fr {
   background-image: url(../images/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
 }
-.resto__photo--photo4 {
+.resto__photo--delice {
   background-image: url(../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
 .resto__photo--menu {
@@ -483,16 +502,16 @@ a.linkall {
   background-size: contain;
   background-repeat: no-repeat;
 }
-.bgphoto--photo1 {
+.bgphoto--palette {
   background-image: url(../images/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
 }
-.bgphoto--photo2 {
+.bgphoto--note {
   background-image: url(../images/stil-u2Lp8tXIcjw-unsplash.jpg);
 }
-.bgphoto--photo3 {
+.bgphoto--fr {
   background-image: url(../images/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
 }
-.bgphoto--photo4 {
+.bgphoto--delice {
   background-image: url(../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
 

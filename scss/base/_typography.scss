@@ -65,9 +65,14 @@ p {
     font-weight: normal;
 }
 
-.cntlogo {
-    & a.logo {
+.logo {
+    &--header a {
         font-size: 1.6em;
+    }
+    &--footer a {
+        font-size: 1.1em;
+        color: #fff;
+        font-weight: normal;
     }
 }
 
@@ -84,12 +89,6 @@ p {
 .title {
     font-size: 1.5em;
     font-weight: bold;
-}
-
-footer .logo {
-    color: #fff;
-    font-weight: normal;
-    font-size: 0.9em;
 }
 
 footer ul li a {
