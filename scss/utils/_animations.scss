@@ -1,0 +1,55 @@
+$timing-spinner: 3s;
+$delay-display: 3s;
+$timing-display: 3s;
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: xxx-large;
+    //animation: loading-spinner $timing-spinner cubic-bezier(0, 1, 0, 1) forwards;
+    animation: loading-spinner $timing-spinner ease-in-out both;
+    //animation: loading-spinner $timing-spinner cubic-bezier(0, 1, 0, 1) forwards;
+}
+
+.main {
+    animation: display-container $delay-display $timing-display forwards;
+}
+
+@keyframes loading-spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-3turn);
+        pacity: 0;
+        
+    }
+}
+/*
+@keyframes loading-spinner {
+    0% {
+        transform: rotate(0);
+    }
+    17% {
+        transform: rotate(-0.1turn);
+    }
+    24% {
+        transform: rotate(-0.3turn);
+    }
+    46% {
+        
+        animation-timing-function: cubic-bezier(.25,0.25,1);
+    }
+    100% {
+        transform: rotate(-1turn);
+        opacity: 0;
+        animation: display-container $prog-display;
+    }
+}*/
+
+@keyframes display-container {
+    100% {
+        opacity: 1;
+    }
+}

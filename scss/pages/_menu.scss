@@ -16,12 +16,6 @@ a.linkall {
     @include flexbox(row, wrap, "", space-between, "");
 }
 
-.shape {
-    &--width {
-        //width: 100%;
-    }
-}
-
 .bgphoto {
     @include flexbox(column, "", "", "", "");
     background-size: contain;
