@@ -1,48 +1,104 @@
-.loader {
+/* ANIMATIONS HP */
+.container--loader {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: xxx-large;
-  animation: loading-spinner 3s ease-in-out both;
+  width: 50px;
+  height: 50px;
 }
 
-.main {
-  animation: display-container 3s 3s forwards;
+.loader--main {
+  opacity: 0;
+  animation: display-container 2s 1s linear forwards;
 }
 
-@keyframes loading-spinner {
+.loader {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 6px solid rgba(147, 86, 220, 0.4);
+}
+
+.loader {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 6px solid transparent;
+  border-top-color: #9356DC;
+  border-bottom-color: #9356DC;
+  animation: loading-spin 2s linear forwards;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50px;
+  border: 6px solid transparent;
+  border-top-color: #FF79DA;
+  border-bottom-color: #FF79DA;
+  opacity: 0.6;
+  animation: loading-spin 2s linear forwards;
+}
+
+@keyframes loading-spin {
   0% {
     transform: rotate(0);
   }
+  50% {
+    opacity: 1;
+  }
   100% {
-    transform: rotate(-3turn);
-    pacity: 0;
+    transform: rotate(2turn);
+    opacity: 0;
   }
 }
-/*
-@keyframes loading-spinner {
-    0% {
-        transform: rotate(0);
-    }
-    17% {
-        transform: rotate(-0.1turn);
-    }
-    24% {
-        transform: rotate(-0.3turn);
-    }
-    46% {
-
-        animation-timing-function: cubic-bezier(.25,0.25,1);
-    }
-    100% {
-        transform: rotate(-1turn);
-        opacity: 0;
-        animation: display-container $prog-display;
-    }
-}*/
-@keyframes display-container {
-  100% {
+@keyframes loading-spinreverse {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
     opacity: 1;
+  }
+  100% {
+    transform: rotate(1turn);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes display-container {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* ANIMATIONS PLATS */
+.plat {
+  opacity: 0;
+  animation: displayed 3s linear forwards;
+}
+
+@keyframes displayed {
+  0% {
+    transform: translateY(20%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(1turn);
+    opacity: 0;
   }
 }
 *, *::after, *::before {
@@ -222,7 +278,6 @@ footer ul li a {
 }
 
 .main {
-  opacity: 0;
   max-width: 1200px;
   margin: 0 auto;
 }

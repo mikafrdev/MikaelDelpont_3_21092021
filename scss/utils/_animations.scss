@@ -1,55 +1,107 @@
-$timing-spinner: 3s;
-$delay-display: 3s;
-$timing-display: 3s;
+/* ANIMATIONS HP */
+
+$timing-spin: 2s;
+$delay-display: 2s;
+$timing-display: 1s;
+
+.container--loader {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.loader--main {
+    opacity: 0;
+    animation: display-container $delay-display $timing-display linear forwards;
+}
 
 .loader {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 6px solid rgba(147, 86, 220, 0.4);
+}
+
+.loader {
+    opacity: 0;
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: xxx-large;
-    //animation: loading-spinner $timing-spinner cubic-bezier(0, 1, 0, 1) forwards;
-    animation: loading-spinner $timing-spinner ease-in-out both;
-    //animation: loading-spinner $timing-spinner cubic-bezier(0, 1, 0, 1) forwards;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 6px solid transparent;
+    border-top-color: $bg-primary;
+    border-bottom-color: $bg-primary;
+    animation: loading-spin $timing-spin linear forwards;
 }
 
-.main {
-    animation: display-container $delay-display $timing-display forwards;
+.loader:after {
+    content: "";
+    position: absolute;
+    top: 5px; left: 5px; right: 5px; bottom: 5px;
+    border-radius: 50px;
+    border: 6px solid transparent;
+    border-top-color: $bg-secondary;
+    border-bottom-color: $bg-secondary;
+    opacity: .6;
+    animation: loading-spin $timing-spin linear forwards;
 }
 
-@keyframes loading-spinner {
+@keyframes loading-spin {
     0% {
         transform: rotate(0);
     }
-    100% {
-        transform: rotate(-3turn);
-        pacity: 0;
-        
-    }
-}
-/*
-@keyframes loading-spinner {
-    0% {
-        transform: rotate(0);
-    }
-    17% {
-        transform: rotate(-0.1turn);
-    }
-    24% {
-        transform: rotate(-0.3turn);
-    }
-    46% {
-        
-        animation-timing-function: cubic-bezier(.25,0.25,1);
-    }
-    100% {
-        transform: rotate(-1turn);
-        opacity: 0;
-        animation: display-container $prog-display;
-    }
-}*/
-
-@keyframes display-container {
-    100% {
+    50% {
         opacity: 1;
+    }
+    100% {
+        transform: rotate(2turn);
+        opacity: 0;
+    }
+}
+
+@keyframes loading-spinreverse {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(1turn);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes display-container {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ANIMATIONS PLATS */
+.plat {
+    opacity: 0;
+    animation: displayed 3s linear forwards;
+}
+
+@keyframes displayed {
+    0% {
+        transform: translateY(20%);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(1turn);
+        opacity: 0;
     }
 }
