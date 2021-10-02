@@ -1,7 +1,6 @@
 /* ANIMATIONS HP */
 
 $timing-spin: 2s;
-$delay-display: 2s;
 $timing-display: 1s;
 
 .container--loader {
@@ -13,7 +12,7 @@ $timing-display: 1s;
 
 .loader--main {
     opacity: 0;
-    animation: display-container $delay-display $timing-display linear forwards;
+    animation: display-container $timing-display $timing-spin linear forwards;
 }
 
 .loader {
@@ -79,10 +78,8 @@ $timing-display: 1s;
 @-webkit-keyframes display-container {
     0% {
         opacity: 0;
-        transform: translateY(50%);
     }
     100% {
-        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -90,18 +87,88 @@ $timing-display: 1s;
 /* ANIMATIONS PLATS */
 .plat {
     opacity: 0;
-    animation: displayed 3s linear forwards;
+    animation: anim-plat 2s cubic-bezier(.1,.9,.1,1) both;
+    
+    &--1 {
+        animation-delay: 500ms;
+    }
+    &--2 {
+        animation-delay: 700ms;
+    }
+    &--3 {
+        animation-delay: 900ms;
+    }
+    &--4 {
+        animation-delay: 1100ms;
+    }
 }
 
-@keyframes displayed {
+@keyframes anim-plat {
     0% {
-        transform: translateY(20%);
-    }
-    50% {
-        opacity: 1;
+        opacity: 0;
+        transform: translateY(30%);
     }
     100% {
-        transform: rotate(1turn);
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ANIMATION plat checked */
+.plat {
+    &__slide {
+        @include flexbox(row, "", "", "", flex-end);
+        transform: translateX(60px);
+        animation: anim-check-reverse 400ms linear backwards;
+    }
+    &__suspensions {
         opacity: 0;
+        //transform: translateX(20px);
+        //animation: anim-check-reverse 200ms linear both;
+    }
+    &:hover &__slide {
+        animation: anim-check 400ms linear forwards;
+    }
+    &:hover &__suspensions {
+        animation: anim-suspensions 200ms 200ms linear forwards;
+    }
+}
+
+@keyframes anim-check {
+    0% {
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes anim-check-reverse {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(60px);
+    }
+}
+
+@keyframes anim-suspensions {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes anim-suspensions-reverse {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(20px);
     }
 }

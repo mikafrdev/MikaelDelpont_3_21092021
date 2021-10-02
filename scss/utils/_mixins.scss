@@ -13,7 +13,6 @@
 
 @mixin bloc {
     margin-bottom: 20px;
-    padding: 25px;
     border: 0;
     border-radius: 20px;
     font-weight: bold;
@@ -38,6 +37,11 @@
 
 @mixin border-bottom-radius($border-radius) {
     border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+}
+
+@mixin border-right-radius($border-radius) {
+    border-top-right-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
 }
 

@@ -88,6 +88,7 @@
         position: relative;
         background-color: $bg-colour-resto;
         @include bloc;
+        padding: 25px;
         & i {
             margin: 0 15px 0 10px;
             font-size: larger;
@@ -117,32 +118,4 @@
             width: 370px;
         }
     } 
-}
-
-.plat {
-    @include flexbox(row, wrap, "", space-between, "");
-    @include bloc;
-    max-width: 450px;
-    background-color: $bg-colour;
-    padding: 18px 23px 15px 16px;
-    & a {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
-    & h3 {
-        font-size: 1.3em;
-    }
-    & span {
-        font-size: 1em;
-        font-weight: bold;
-    }
-    @include breakpoints (md) {
-        width: 44%;
-    }
-    @include breakpoints (xl) {
-        width: 29%;
-    }
 }
