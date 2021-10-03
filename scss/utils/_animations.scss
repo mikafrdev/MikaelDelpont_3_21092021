@@ -116,29 +116,35 @@ $timing-display: 1s;
 
 /* ANIMATION plat checked */
 .plat {
+        transform-origin: left;
     &__slide {
         @include flexbox(row, "", "", "", flex-end);
-        transform: translateX(60px);
-        animation: anim-check-reverse 400ms linear backwards;
+        //transform: translateX(60px);
+        //animation: anim-check-reverse 400ms linear backwards;
     }
-    &__suspensions {
-        opacity: 0;
-        //transform: translateX(20px);
-        //animation: anim-check-reverse 200ms linear both;
+    &__infos {
+        width: 300px;
+        transition: width 350ms;
     }
-    &:hover &__slide {
-        animation: anim-check 400ms linear forwards;
+    &__slide {
+        //animation: anim-menu 400ms linear forwards;
     }
-    &:hover &__suspensions {
-        animation: anim-suspensions 200ms 200ms linear forwards;
+    &__check {
+        //transform: translateX(-60px);
     }
+    &:hover
+        &__infos {
+            width: 210px;
+            background-color: rosybrown;
+        }
 }
 
-@keyframes anim-check {
+@keyframes anim-menu {
     0% {
     }
     100% {
-        transform: translateX(0);
+        //transform: translateX(0);
+        width: 200px;
     }
 }
 
@@ -148,27 +154,5 @@ $timing-display: 1s;
     }
     100% {
         transform: translateX(60px);
-    }
-}
-
-@keyframes anim-suspensions {
-    0% {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes anim-suspensions-reverse {
-    0% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(20px);
     }
 }

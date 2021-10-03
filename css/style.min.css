@@ -110,26 +110,26 @@
   }
 }
 /* ANIMATION plat checked */
+.plat {
+  transform-origin: left;
+}
 .plat__slide {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  transform: translateX(60px);
-  animation: anim-check-reverse 400ms linear backwards;
 }
-.plat__suspensions {
-  opacity: 0;
+.plat__infos {
+  width: 300px;
+  transition: width 350ms;
 }
-.plat:hover .plat__slide {
-  animation: anim-check 400ms linear forwards;
-}
-.plat:hover .plat__suspensions {
-  animation: anim-suspensions 200ms 200ms linear forwards;
+.plat:hover .plat__infos {
+  width: 210px;
+  background-color: rosybrown;
 }
 
-@keyframes anim-check {
+@keyframes anim-menu {
   100% {
-    transform: translateX(0);
+    width: 200px;
   }
 }
 @keyframes anim-check-reverse {
@@ -138,26 +138,6 @@
   }
   100% {
     transform: translateX(60px);
-  }
-}
-@keyframes anim-suspensions {
-  0% {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-@keyframes anim-suspensions-reverse {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(20px);
   }
 }
 *, *::after, *::before {
@@ -604,45 +584,47 @@ a.linkall {
 .plat {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
   margin-bottom: 20px;
   border: 0;
   border-radius: 20px;
   font-weight: bold;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  max-width: 450px;
+  width: 350px;
+  height: 70px;
   background-color: #fff;
   overflow: hidden;
   cursor: pointer;
 }
 .plat__infos {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
   justify-content: space-between;
-  flex: auto;
-  padding: 16px 0 15px 16px;
+  padding: 0 0 0 17px;
 }
-.plat__suspensions {
-  padding: 0 0 15px;
+.plat__infos h3 {
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.plat__infos p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .plat__prix {
   align-self: flex-end;
-  padding: 0 24px 15px;
+  padding: 0 20px 15px;
   font-weight: bold;
-}
-.plat__infos {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  font-size: 0.9em;
 }
 .plat__check {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 60px;
-  height: 100%;
   border: 0;
   border-radius: 0;
   background-color: #99E2D0;
