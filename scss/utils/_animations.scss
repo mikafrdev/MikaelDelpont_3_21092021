@@ -32,8 +32,8 @@ $timing-display: 1s;
     height: 50px;
     border-radius: 50px;
     border: 6px solid transparent;
-    border-top-color: $bg-primary;
-    border-bottom-color: $bg-primary;
+    border-top-color: $color-primary;
+    border-bottom-color: $color-primary;
     animation: loading-spin $timing-spin linear forwards;
 }
 
@@ -43,8 +43,8 @@ $timing-display: 1s;
     top: 5px; left: 5px; right: 5px; bottom: 5px;
     border-radius: 50px;
     border: 6px solid transparent;
-    border-top-color: $bg-secondary;
-    border-bottom-color: $bg-secondary;
+    border-top-color: $color-secondary;
+    border-bottom-color: $color-secondary;
     opacity: .6;
     animation: loading-spin $timing-spin linear forwards;
 }
@@ -116,43 +116,101 @@ $timing-display: 1s;
 
 /* ANIMATION plat checked */
 .plat {
-        transform-origin: left;
+    position: relative;
     &__slide {
         @include flexbox(row, "", "", "", flex-end);
-        //transform: translateX(60px);
-        //animation: anim-check-reverse 400ms linear backwards;
     }
     &__infos {
-        width: 300px;
-        transition: width 350ms;
+        width: 233px;
     }
-    &__slide {
-        //animation: anim-menu 400ms linear forwards;
+    &__prix {
+        transform: translate(60px);
+        animation: slider-reverse 300ms linear both;
     }
-    &__check {
-        //transform: translateX(-60px);
+    &__check:not(:hover) {
+        transform: translate(60px);
+        animation: slider-reverse 300ms linear both;
     }
-    &:hover
-        &__infos {
-            width: 210px;
-            background-color: rosybrown;
-        }
+    &:hover &__infos {
+        animation: reduction 300ms linear forwards;
+    }
+    &:hover &__prix, &:hover &__check {
+        animation: slider 300ms linear both;
+    }
+    &:hover &__prix {
+        animation-delay: 50ms;
+    }
+    &:hover &__check i {
+        animation: rotate-check 300ms linear forwards;
+    }
 }
 
-@keyframes anim-menu {
+@keyframes slider {
     0% {
+        transform: translateX(60px);
     }
     100% {
-        //transform: translateX(0);
-        width: 200px;
+        transform: translateX(0);
     }
 }
 
-@keyframes anim-check-reverse {
+@keyframes slider-reverse {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(60px);
+    }
+}
+
+@keyframes rotate-check {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes reduction {
+    0% {
+        //transform: scale(0);
+    }
+    100% {
+        width: 200px;
+        //transform: scale(0);
+    }
+}
+
+/* ANIMATION PICTO COEUR */
+
+.picto_heart {
+    position: relative;
+    font-weight: 100;
+    color: #000;
+    //background: linear-gradient(to bottom right, $color-btn-hover-secondary, $color-btn-hover-primary);
+    //background: url(../../images/heart-solid.svg) no-repeat right;
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        opacity: 0;
+        position: absolute; left: 0;
+        content: "\f004";
+        font-weight: bold;
+        color: $color-primary;
+        cursor: pointer;
+        transition: opacity 400ms;
+    }
+}
+
+@keyframes filled {
+    0% {
+        transform: opacity(0);
+    }
+    100% {
+        transform: opacity(100%);
     }
 }

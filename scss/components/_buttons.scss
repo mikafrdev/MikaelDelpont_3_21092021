@@ -1,7 +1,3 @@
-$color-ratio: 5%;
-$color-btn-hover-primary: lighten($bg-primary, $color-ratio);
-$color-btn-hover-secondary: lighten($bg-secondary, $color-ratio);
-
 .btncta {
     position: relative;
     z-index: 1;
@@ -11,8 +7,8 @@ $color-btn-hover-secondary: lighten($bg-secondary, $color-ratio);
     padding: 15px 40px;
     border: 0;
     border-radius: 30px;
-    color: $btn-colour;
-    background-image: linear-gradient(to bottom right, $bg-secondary, $bg-primary);
+    color: #fff;
+    background-image: linear-gradient(to bottom right, $color-secondary, $color-primary);
     @include shadow;
     cursor: pointer;
     &:hover {

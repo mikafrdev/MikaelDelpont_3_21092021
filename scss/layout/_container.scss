@@ -36,10 +36,10 @@
         align-items: center;
     }
     &--bg1 {
-        background-color: $bg-colour-resto;
+        background-color: $color-bg;
     }
     &--bg2 {
-        background-color: $bg-colour;
+        background-color: #fff;
     }
     &--menu {
         margin-top: 194px;
@@ -67,7 +67,7 @@
     &--footer {
         padding-top: 1.8rem;
         padding-bottom: 1.5rem;
-        background-color: $bg-footer;
+        background-color: $color-footer;
     }
 }
 
@@ -86,9 +86,12 @@
         @include flexbox(row, "", "", "", center);
         width: 268px;
         position: relative;
-        background-color: $bg-colour-resto;
+        background-color: $color-bg;
         @include bloc;
         padding: 25px;
+        &.bg {
+            background-color: $color-quarternary;
+        }
         & i {
             margin: 0 15px 0 10px;
             font-size: larger;
@@ -97,8 +100,8 @@
         &::before {
             position: absolute;
             left: -15px;
-            background-color: $bg-primary;
-            color: $colour-secondary;
+            background-color: $color-primary;
+            color: #fff;
             border-radius: 12px;
             padding: 5px 10px;
             font-size: 0.8em;

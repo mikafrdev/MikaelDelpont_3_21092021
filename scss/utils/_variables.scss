@@ -1,26 +1,18 @@
-$colour-primary: #000;
-$colour-secondary: #fff;
-$colour-tertiary: #000;
-$colour-accent: #9356DC;
-$colour-white: #fff;
-$bg-primary: #9356DC;
-$bg-secondary: #FF79DA;
-$bg-tertiary: #99E2D0;
-$bg-colour: #fff;
-$bg-colour-resto: #f6f6f6;
-$bg-footer: #353535;
-
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-quarternary: #f5edff;
+$color-bg: #f6f6f6;
+$color-footer: #353535;
 
 $layout-margin: 20px;
 $border-radius: 20px;
-
-$btn-colour: #fff;
 $btn-padding: 15px;
 $btn-radius: 18px;
 
-$picto-color: grey;
-
-$colour-border-title-secondary: #99e2d0;
+$color-ratio: 5%;
+$color-btn-hover-primary: lighten($color-primary, $color-ratio);
+$color-btn-hover-secondary: lighten($color-secondary, $color-ratio);
 
 //Nombre de bouton de recherche
 $btnsearchnumber: 3;

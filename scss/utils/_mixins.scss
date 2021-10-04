@@ -1,7 +1,3 @@
-@mixin border($colour:$colour-primary) {
-    border: .1rem solid $colour;
-}
-
 @mixin flexbox($flexdirection, $flexwrap, $aligncontent, $justifycontent, $alignitems) {
     display: flex;
     @if ($flexdirection != "") {flex-direction: $flexdirection;}

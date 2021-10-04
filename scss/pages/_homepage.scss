@@ -22,8 +22,8 @@
         font-size: 0.8em;
         line-height: 30px;
         font-weight: bold;
-        color: darken($bg-tertiary, 30%);
-        background-color: $bg-tertiary;
+        color: darken($color-tertiary, 30%);
+        background-color: $color-tertiary;
     }
     &__photo {
         width: 100%;
@@ -48,7 +48,7 @@
     &__infos {
         @include flexbox("", "", "", space-between, "");
         padding: 16px 20px 20px 14px;
-        background-color: $bg-colour;
+        background-color: $color-bg;
         @include border-bottom-radius($border-radius);
     }
 }

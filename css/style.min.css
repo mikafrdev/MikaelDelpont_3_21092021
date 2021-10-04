@@ -111,7 +111,7 @@
 }
 /* ANIMATION plat checked */
 .plat {
-  transform-origin: left;
+  position: relative;
 }
 .plat__slide {
   display: flex;
@@ -119,25 +119,84 @@
   align-items: flex-end;
 }
 .plat__infos {
-  width: 300px;
-  transition: width 350ms;
+  width: 233px;
+}
+.plat__prix {
+  transform: translate(60px);
+  animation: slider-reverse 300ms linear both;
+}
+.plat__check:not(:hover) {
+  transform: translate(60px);
+  animation: slider-reverse 300ms linear both;
 }
 .plat:hover .plat__infos {
-  width: 210px;
-  background-color: rosybrown;
+  animation: reduction 300ms linear forwards;
+}
+.plat:hover .plat__prix, .plat:hover .plat__check {
+  animation: slider 300ms linear both;
+}
+.plat:hover .plat__prix {
+  animation-delay: 50ms;
+}
+.plat:hover .plat__check i {
+  animation: rotate-check 300ms linear forwards;
 }
 
-@keyframes anim-menu {
+@keyframes slider {
+  0% {
+    transform: translateX(60px);
+  }
   100% {
-    width: 200px;
+    transform: translateX(0);
   }
 }
-@keyframes anim-check-reverse {
+@keyframes slider-reverse {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(60px);
+  }
+}
+@keyframes rotate-check {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes reduction {
+  100% {
+    width: 200px;
+  }
+}
+/* ANIMATION PICTO COEUR */
+.picto_heart {
+  position: relative;
+  font-weight: 100;
+  color: #000;
+}
+.picto_heart:hover::after {
+  opacity: 1;
+}
+.picto_heart::after {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  content: "\f004";
+  font-weight: bold;
+  color: #9356DC;
+  cursor: pointer;
+  transition: opacity 400ms;
+}
+
+@keyframes filled {
+  0% {
+    transform: opacity(0);
+  }
+  100% {
+    transform: opacity(100%);
   }
 }
 *, *::after, *::before {
@@ -279,7 +338,6 @@ footer ul li a {
 }
 
 .picto_heart {
-  font-weight: 100;
   font-size: 1.5em;
 }
 
@@ -438,6 +496,9 @@ footer ul li a {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 25px;
 }
+.instructions li.bg {
+  background-color: #f5edff;
+}
 .instructions li i {
   margin: 0 15px 0 10px;
   font-size: larger;
@@ -562,7 +623,7 @@ footer ul li i {
   display: flex;
   justify-content: space-between;
   padding: 16px 20px 20px 14px;
-  background-color: #fff;
+  background-color: #f6f6f6;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -578,12 +639,14 @@ a.linkall {
 .underline {
   width: 40px;
   margin-bottom: 14px;
-  border-bottom: 3px solid #99e2d0;
+  border-bottom: 3px solid #99E2D0;
 }
 
 .plat {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   margin-bottom: 20px;
   border: 0;
   border-radius: 20px;
@@ -624,7 +687,8 @@ a.linkall {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
+  height: 70px;
+  padding: 0 20px;
   border: 0;
   border-radius: 0;
   background-color: #99E2D0;
