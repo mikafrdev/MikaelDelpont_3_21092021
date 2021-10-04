@@ -91,6 +91,9 @@
         padding: 25px;
         &.bg {
             background-color: $color-quarternary;
+            & i {
+                color: $color-primary;
+            }
         }
         & i {
             margin: 0 15px 0 10px;

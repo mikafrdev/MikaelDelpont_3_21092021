@@ -499,6 +499,9 @@ footer ul li a {
 .instructions li.bg {
   background-color: #f5edff;
 }
+.instructions li.bg i {
+  color: #9356DC;
+}
 .instructions li i {
   margin: 0 15px 0 10px;
   font-size: larger;
