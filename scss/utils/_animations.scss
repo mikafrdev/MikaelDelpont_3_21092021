@@ -196,12 +196,14 @@ $timing-display: 1s;
         }
     }
     &::after {
+        content: "\f004";
         opacity: 0;
         position: absolute; left: 0;
-        content: "\f004";
         font-weight: bold;
-        color: $color-primary;
         cursor: pointer;
+        background: linear-gradient(to bottom right, $color-btn-hover-secondary, $color-btn-hover-primary);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
         transition: opacity 400ms;
     }
 }
