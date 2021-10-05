@@ -117,44 +117,61 @@ $timing-display: 1s;
 /* ANIMATION plat checked */
 .plat {
     position: relative;
-    &__slide {
-        @include flexbox(row, "", "", "", flex-end);
-    }
     &__infos {
-        width: 233px;
+        width: 280px;
+        margin-left: 12px;
     }
     &__prix {
-        transform: translate(60px);
-        animation: slider-reverse 300ms linear both;
+        margin-right: 23px;
+        transform: translate(0px);
+        animation: slider-prix-reverse 300ms linear forwards;
     }
-    &__check:not(:hover) {
-        transform: translate(60px);
-        animation: slider-reverse 300ms linear both;
+    &__check {
+        position: absolute; right: 0;
+        animation: slider-check-reverse 300ms linear forwards;
     }
     &:hover &__infos {
-        animation: reduction 300ms linear forwards;
+        animation: slider-infos 300ms linear forwards;
     }
-    &:hover &__prix, &:hover &__check {
-        animation: slider 300ms linear both;
+    &:hover &__check {
+        animation: slider-check 300ms linear both;
     }
     &:hover &__prix {
-        animation-delay: 50ms;
+        animation: slider-prix 300ms linear both;
     }
     &:hover &__check i {
-        animation: rotate-check 300ms linear forwards;
+        animation: rotate-check 400ms linear forwards;
     }
 }
 
-@keyframes slider {
+@keyframes slider-prix {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-45px);
+    }
+}
+
+@keyframes slider-prix-reverse {
+    0% {
+        transform: translateX(-45px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slider-check {
     0% {
         transform: translateX(60px);
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(0px);
     }
 }
 
-@keyframes slider-reverse {
+@keyframes slider-check-reverse {
     0% {
         transform: translateX(0);
     }
@@ -172,13 +189,11 @@ $timing-display: 1s;
     }
 }
 
-@keyframes reduction {
+@keyframes slider-infos {
     0% {
-        //transform: scale(0);
     }
     100% {
-        width: 200px;
-        //transform: scale(0);
+        width: 244px;
     }
 }
 

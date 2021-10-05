@@ -1,206 +1,3 @@
-/* ANIMATIONS HP */
-.container--loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50px;
-  height: 50px;
-}
-
-.loader--main {
-  opacity: 0;
-  animation: display-container 1s 2s linear forwards;
-}
-
-.loader {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  border: 6px solid rgba(147, 86, 220, 0.4);
-}
-
-.loader {
-  opacity: 0;
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  border: 6px solid transparent;
-  border-top-color: #9356DC;
-  border-bottom-color: #9356DC;
-  animation: loading-spin 2s linear forwards;
-}
-
-.loader:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  border-radius: 50px;
-  border: 6px solid transparent;
-  border-top-color: #FF79DA;
-  border-bottom-color: #FF79DA;
-  opacity: 0.6;
-  animation: loading-spin 2s linear forwards;
-}
-
-@keyframes loading-spin {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(2turn);
-    opacity: 0;
-  }
-}
-@keyframes loading-spinreverse {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(1turn);
-    opacity: 0;
-  }
-}
-@-webkit-keyframes display-container {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-/* ANIMATIONS PLATS */
-.plat {
-  opacity: 0;
-  animation: anim-plat 2s cubic-bezier(0.1, 0.9, 0.1, 1) both;
-}
-.plat--1 {
-  animation-delay: 500ms;
-}
-.plat--2 {
-  animation-delay: 700ms;
-}
-.plat--3 {
-  animation-delay: 900ms;
-}
-.plat--4 {
-  animation-delay: 1100ms;
-}
-
-@keyframes anim-plat {
-  0% {
-    opacity: 0;
-    transform: translateY(30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* ANIMATION plat checked */
-.plat {
-  position: relative;
-}
-.plat__slide {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-}
-.plat__infos {
-  width: 233px;
-}
-.plat__prix {
-  transform: translate(60px);
-  animation: slider-reverse 300ms linear both;
-}
-.plat__check:not(:hover) {
-  transform: translate(60px);
-  animation: slider-reverse 300ms linear both;
-}
-.plat:hover .plat__infos {
-  animation: reduction 300ms linear forwards;
-}
-.plat:hover .plat__prix, .plat:hover .plat__check {
-  animation: slider 300ms linear both;
-}
-.plat:hover .plat__prix {
-  animation-delay: 50ms;
-}
-.plat:hover .plat__check i {
-  animation: rotate-check 300ms linear forwards;
-}
-
-@keyframes slider {
-  0% {
-    transform: translateX(60px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slider-reverse {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(60px);
-  }
-}
-@keyframes rotate-check {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(1turn);
-  }
-}
-@keyframes reduction {
-  100% {
-    width: 200px;
-  }
-}
-/* ANIMATION PICTO COEUR */
-.picto_heart {
-  position: relative;
-  font-weight: 100;
-  color: #000;
-}
-.picto_heart:hover::after {
-  opacity: 1;
-}
-.picto_heart::after {
-  content: "\f004";
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-  cursor: pointer;
-  background: linear-gradient(to bottom right, #ff93e1, #a16be0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: opacity 400ms;
-}
-
-@keyframes filled {
-  0% {
-    transform: opacity(0);
-  }
-  100% {
-    transform: opacity(100%);
-  }
-}
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -653,6 +450,7 @@ a.linkall {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  align-content: flex-end;
   justify-content: space-between;
   margin-bottom: 20px;
   border: 0;
@@ -668,12 +466,10 @@ a.linkall {
 .plat__infos {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
-  justify-content: space-between;
-  padding: 0 0 0 17px;
+  align-content: flex-end;
+  margin-bottom: 15px;
 }
 .plat__infos h3 {
-  width: 100%;
   padding: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -685,8 +481,8 @@ a.linkall {
   white-space: nowrap;
 }
 .plat__prix {
+  margin-bottom: 15px;
   align-self: flex-end;
-  padding: 0 20px 15px;
   font-weight: bold;
   font-size: 0.9em;
 }
@@ -734,6 +530,224 @@ a.linkall {
 }
 .bgphoto--delice {
   background-image: url(../images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+/* ANIMATIONS HP */
+.container--loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.loader--main {
+  opacity: 0;
+  animation: display-container 1s 2s linear forwards;
+}
+
+.loader {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 6px solid rgba(147, 86, 220, 0.4);
+}
+
+.loader {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 6px solid transparent;
+  border-top-color: #9356DC;
+  border-bottom-color: #9356DC;
+  animation: loading-spin 2s linear forwards;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50px;
+  border: 6px solid transparent;
+  border-top-color: #FF79DA;
+  border-bottom-color: #FF79DA;
+  opacity: 0.6;
+  animation: loading-spin 2s linear forwards;
+}
+
+@keyframes loading-spin {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(2turn);
+    opacity: 0;
+  }
+}
+@keyframes loading-spinreverse {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(1turn);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes display-container {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* ANIMATIONS PLATS */
+.plat {
+  opacity: 0;
+  animation: anim-plat 2s cubic-bezier(0.1, 0.9, 0.1, 1) both;
+}
+.plat--1 {
+  animation-delay: 500ms;
+}
+.plat--2 {
+  animation-delay: 700ms;
+}
+.plat--3 {
+  animation-delay: 900ms;
+}
+.plat--4 {
+  animation-delay: 1100ms;
+}
+
+@keyframes anim-plat {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ANIMATION plat checked */
+.plat {
+  position: relative;
+}
+.plat__infos {
+  width: 280px;
+  margin-left: 12px;
+}
+.plat__prix {
+  margin-right: 23px;
+  transform: translate(0px);
+  animation: slider-prix-reverse 300ms linear forwards;
+}
+.plat__check {
+  position: absolute;
+  right: 0;
+  animation: slider-check-reverse 300ms linear forwards;
+}
+.plat:hover .plat__infos {
+  animation: slider-infos 300ms linear forwards;
+}
+.plat:hover .plat__check {
+  animation: slider-check 300ms linear both;
+}
+.plat:hover .plat__prix {
+  animation: slider-prix 300ms linear both;
+}
+.plat:hover .plat__check i {
+  animation: rotate-check 400ms linear forwards;
+}
+
+@keyframes slider-prix {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-45px);
+  }
+}
+@keyframes slider-prix-reverse {
+  0% {
+    transform: translateX(-45px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes slider-check {
+  0% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes slider-check-reverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(60px);
+  }
+}
+@keyframes rotate-check {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes slider-infos {
+  100% {
+    width: 244px;
+  }
+}
+/* ANIMATION PICTO COEUR */
+.picto_heart {
+  position: relative;
+  font-weight: 100;
+  color: #000;
+}
+.picto_heart:hover::after {
+  opacity: 1;
+}
+.picto_heart::after {
+  content: "\f004";
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(to bottom right, #ff93e1, #a16be0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 400ms;
+}
+
+@keyframes filled {
+  0% {
+    transform: opacity(0);
+  }
+  100% {
+    transform: opacity(100%);
+  }
 }
 
 /*# sourceMappingURL=style.min.css.map */
