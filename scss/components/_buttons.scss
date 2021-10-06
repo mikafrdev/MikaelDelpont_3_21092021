@@ -1,33 +1,18 @@
 .btncta {
     position: relative;
-    z-index: 1;
     margin: 2rem 0 1rem 0;
     text-align: center;
-    padding: 15px 20px;
     padding: 15px 40px;
     border: 0;
     border-radius: 30px;
     color: #fff;
-    background-image: linear-gradient(to bottom right, $color-secondary, $color-primary);
+    @include gradient;
     @include shadow;
     cursor: pointer;
     &:hover {
-        &::after {
-            opacity: 1;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
+        @include shadow-hover;
+        @include gradient-hover;
+        transition: all 400ms ease;
     }
-    &::after {
-        content: "";
-        opacity: 0;
-        z-index: -1;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        border-radius: 30px;
-        background-image: linear-gradient(to bottom right, $color-btn-hover-secondary, $color-btn-hover-primary);
-        transition: opacity 250ms;
-    }
+    
 }

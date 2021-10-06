@@ -1,5 +1,5 @@
 .main {
-    max-width: 1200px;
+    max-width: 1900px;
     margin: 0 auto;
 }
 
@@ -79,7 +79,7 @@
     & ul {
         @include flexbox(column, "", "", "", center);
         @include breakpoints (md) {
-            @include flexbox(row, wrap, "", space-between, "");
+            @include flexbox(row, wrap, "", space-around, "");
         }
     }
     & li {

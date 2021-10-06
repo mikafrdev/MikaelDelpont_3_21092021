@@ -1,7 +1,6 @@
 *, *::after, *::before {
   margin: 0;
   padding: 0;
-  /*box-sizing: inherit;*/
 }
 
 * {
@@ -107,34 +106,20 @@ footer ul li a {
 
 .btncta {
   position: relative;
-  z-index: 1;
   margin: 2rem 0 1rem 0;
   text-align: center;
-  padding: 15px 20px;
   padding: 15px 40px;
   border: 0;
   border-radius: 30px;
   color: #fff;
   background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.5);
   cursor: pointer;
 }
-.btncta:hover::after {
-  opacity: 1;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.btncta::after {
-  content: "";
-  opacity: 0;
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 30px;
+.btncta:hover {
+  box-shadow: 4px 4px 10px 0px rgba(95, 63, 63, 0.7);
   background-image: linear-gradient(to bottom right, #ff93e1, #a16be0);
-  transition: opacity 250ms;
+  transition: all 400ms ease;
 }
 
 .picto_heart {
@@ -176,7 +161,7 @@ footer ul li a {
 }
 
 .main {
-  max-width: 1200px;
+  max-width: 1900px;
   margin: 0 auto;
 }
 
@@ -280,7 +265,7 @@ footer ul li a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 .instructions li {
@@ -294,7 +279,7 @@ footer ul li a {
   border: 0;
   border-radius: 20px;
   font-weight: bold;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.5);
   padding: 25px;
 }
 .instructions li.bg {
@@ -364,7 +349,7 @@ footer ul li i {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.5);
 }
 @media screen and (min-width: 768px) {
   .resto {
@@ -456,7 +441,7 @@ a.linkall {
   border: 0;
   border-radius: 20px;
   font-weight: bold;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.5);
   width: 350px;
   height: 70px;
   background-color: #fff;
@@ -650,6 +635,7 @@ a.linkall {
 .plat__infos {
   width: 280px;
   margin-left: 12px;
+  animation: slider-infos-reverse 300ms 100ms linear forwards;
 }
 .plat__prix {
   margin-right: 23px;
@@ -716,7 +702,15 @@ a.linkall {
 }
 @keyframes slider-infos {
   100% {
-    width: 244px;
+    width: 230px;
+  }
+}
+@keyframes slider-infos-reverse {
+  0% {
+    width: 230px;
+  }
+  100% {
+    width: 288px;
   }
 }
 /* ANIMATION PICTO COEUR */

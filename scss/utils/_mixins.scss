@@ -16,7 +16,19 @@
 }
 
 @mixin shadow {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.5);
+}
+
+@mixin shadow-hover {
+    box-shadow: 4px 4px 10px 0px rgba(95, 63, 63, 0.7);
+}
+
+@mixin gradient {
+    background-image: linear-gradient(to bottom right, $color-secondary, $color-primary);
+}
+
+@mixin gradient-hover {
+    background-image: linear-gradient(to bottom right, $color-btn-hover-secondary, $color-btn-hover-primary);
 }
 
 @mixin border-all-radius($border-radius) {

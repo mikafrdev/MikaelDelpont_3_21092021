@@ -120,6 +120,7 @@ $timing-display: 1s;
     &__infos {
         width: 280px;
         margin-left: 12px;
+        animation: slider-infos-reverse 300ms 100ms linear forwards;
     }
     &__prix {
         margin-right: 23px;
@@ -193,7 +194,16 @@ $timing-display: 1s;
     0% {
     }
     100% {
-        width: 244px;
+        width: 230px;
+    }
+}
+
+@keyframes slider-infos-reverse {
+    0% {
+        width: 230px;
+    }
+    100% {
+        width: 288px;
     }
 }
 
