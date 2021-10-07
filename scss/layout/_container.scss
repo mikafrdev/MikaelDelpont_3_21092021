@@ -43,6 +43,12 @@
     }
     &--menu {
         margin-top: 194px;
+        @include breakpoints(lg) {
+            margin-top: 300px;
+        }
+        @include breakpoints(lg) {
+            margin-top: 300px;
+        }
         padding: 0 12px 0 14px;
         @include border-top-radius(50px);
     }

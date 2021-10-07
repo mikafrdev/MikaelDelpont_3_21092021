@@ -118,9 +118,11 @@ $timing-display: 1s;
 .plat {
     position: relative;
     &__infos {
-        width: 280px;
+        width: 288px;
         margin-left: 12px;
-        animation: slider-infos-reverse 300ms 100ms linear forwards;
+        //background-color: pink;
+        transition: width 400ms;
+        //animation: slider-infos-reverse 300ms 100ms linear forwards;
     }
     &__prix {
         margin-right: 23px;
@@ -132,7 +134,8 @@ $timing-display: 1s;
         animation: slider-check-reverse 300ms linear forwards;
     }
     &:hover &__infos {
-        animation: slider-infos 300ms linear forwards;
+        width: 230px;
+        //animation: slider-infos 300ms linear forwards;
     }
     &:hover &__check {
         animation: slider-check 300ms linear both;
@@ -190,31 +193,12 @@ $timing-display: 1s;
     }
 }
 
-@keyframes slider-infos {
-    0% {
-    }
-    100% {
-        width: 230px;
-    }
-}
-
-@keyframes slider-infos-reverse {
-    0% {
-        width: 230px;
-    }
-    100% {
-        width: 288px;
-    }
-}
-
 /* ANIMATION PICTO COEUR */
 
 .picto_heart {
     position: relative;
     font-weight: 100;
     color: #000;
-    //background: linear-gradient(to bottom right, $color-btn-hover-secondary, $color-btn-hover-primary);
-    //background: url(../../images/heart-solid.svg) no-repeat right;
     &:hover {
         &::after {
             opacity: 1;
@@ -230,14 +214,15 @@ $timing-display: 1s;
         -webkit-background-clip: text;
 	    -webkit-text-fill-color: transparent;
         transition: opacity 400ms;
+        
     }
 }
 
-@keyframes filled {
+@keyframes heart {
     0% {
         transform: opacity(0);
     }
     100% {
-        transform: opacity(100%);
+        transform: opacity(1);
     }
 }

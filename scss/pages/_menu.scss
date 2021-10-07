@@ -61,6 +61,9 @@ a.linkall {
 .bgphoto {
     @include flexbox(column, "", "", "", "");
     background-size: contain;
+    @include breakpoints(lg) {
+        background-size: cover;
+    }
     background-repeat: no-repeat;
     @each $key, $value in $lienphotos {
         &--#{$key} {

@@ -214,6 +214,16 @@ footer ul li a {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
 }
+@media screen and (min-width: 992px) {
+  .container--menu {
+    margin-top: 300px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container--menu {
+    margin-top: 300px;
+  }
+}
 @media screen and (min-width: 768px) {
   .container--flexrow {
     display: flex;
@@ -504,6 +514,11 @@ a.linkall {
   background-size: contain;
   background-repeat: no-repeat;
 }
+@media screen and (min-width: 992px) {
+  .bgphoto {
+    background-size: cover;
+  }
+}
 .bgphoto--palette {
   background-image: url(../images/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
 }
@@ -633,9 +648,9 @@ a.linkall {
   position: relative;
 }
 .plat__infos {
-  width: 280px;
+  width: 288px;
   margin-left: 12px;
-  animation: slider-infos-reverse 300ms 100ms linear forwards;
+  transition: width 400ms;
 }
 .plat__prix {
   margin-right: 23px;
@@ -648,7 +663,7 @@ a.linkall {
   animation: slider-check-reverse 300ms linear forwards;
 }
 .plat:hover .plat__infos {
-  animation: slider-infos 300ms linear forwards;
+  width: 230px;
 }
 .plat:hover .plat__check {
   animation: slider-check 300ms linear both;
@@ -700,19 +715,6 @@ a.linkall {
     transform: rotate(1turn);
   }
 }
-@keyframes slider-infos {
-  100% {
-    width: 230px;
-  }
-}
-@keyframes slider-infos-reverse {
-  0% {
-    width: 230px;
-  }
-  100% {
-    width: 288px;
-  }
-}
 /* ANIMATION PICTO COEUR */
 .picto_heart {
   position: relative;
@@ -735,12 +737,12 @@ a.linkall {
   transition: opacity 400ms;
 }
 
-@keyframes filled {
+@keyframes heart {
   0% {
     transform: opacity(0);
   }
   100% {
-    transform: opacity(100%);
+    transform: opacity(1);
   }
 }
 
