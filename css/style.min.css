@@ -650,7 +650,7 @@ a.linkall {
 .plat__infos {
   width: 288px;
   margin-left: 12px;
-  transition: width 400ms;
+  transition: width 470ms;
 }
 .plat__prix {
   margin-right: 23px;
@@ -664,6 +664,7 @@ a.linkall {
 }
 .plat:hover .plat__infos {
   width: 230px;
+  transition: width 470ms;
 }
 .plat:hover .plat__check {
   animation: slider-check 300ms linear both;
@@ -737,12 +738,12 @@ a.linkall {
   transition: opacity 400ms;
 }
 
-@keyframes heart {
+@keyframes filled {
   0% {
     transform: opacity(0);
   }
   100% {
-    transform: opacity(1);
+    transform: opacity(100%);
   }
 }
 

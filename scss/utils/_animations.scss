@@ -120,9 +120,7 @@ $timing-display: 1s;
     &__infos {
         width: 288px;
         margin-left: 12px;
-        //background-color: pink;
-        transition: width 400ms;
-        //animation: slider-infos-reverse 300ms 100ms linear forwards;
+        transition: width 470ms;
     }
     &__prix {
         margin-right: 23px;
@@ -135,7 +133,7 @@ $timing-display: 1s;
     }
     &:hover &__infos {
         width: 230px;
-        //animation: slider-infos 300ms linear forwards;
+        transition: width 470ms;
     }
     &:hover &__check {
         animation: slider-check 300ms linear both;
@@ -214,15 +212,14 @@ $timing-display: 1s;
         -webkit-background-clip: text;
 	    -webkit-text-fill-color: transparent;
         transition: opacity 400ms;
-        
     }
 }
 
-@keyframes heart {
+@keyframes filled {
     0% {
         transform: opacity(0);
     }
     100% {
-        transform: opacity(1);
+        transform: opacity(100%);
     }
 }
