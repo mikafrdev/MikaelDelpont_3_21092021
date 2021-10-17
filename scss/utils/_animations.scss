@@ -62,19 +62,6 @@ $timing-display: 1s;
     }
 }
 
-@keyframes loading-spinreverse {
-    0% {
-        transform: rotate(0);
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(1turn);
-        opacity: 0;
-    }
-}
-
 @-webkit-keyframes display-container {
     0% {
         opacity: 0;
@@ -212,14 +199,5 @@ $timing-display: 1s;
         -webkit-background-clip: text;
 	    -webkit-text-fill-color: transparent;
         transition: opacity 400ms;
-    }
-}
-
-@keyframes filled {
-    0% {
-        transform: opacity(0);
-    }
-    100% {
-        transform: opacity(100%);
     }
 }
